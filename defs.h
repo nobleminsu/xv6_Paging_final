@@ -120,6 +120,8 @@ void            userinit(void);
 int             wait(void);
 void            wakeup(void*);
 void            yield(void);
+int             proc_pagedirs(pde_t** pdrs);
+char*           fetch_app_name(pde_t* pagedir);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

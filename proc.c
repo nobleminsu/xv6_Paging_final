@@ -529,3 +529,31 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+// put every existing padedir in pdrs and return the length
+int proc_pagedirs(pde_t** pdrs) {
+  int i = 0;
+  struct proc *p;
+
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+    if (p->state == UNUSED)
+      continue;
+
+    if (p == initproc)
+      continue;
+      
+    pdrs[i] = p->pgdir;
+    i++;
+  }
+
+  return i;
+}
+
+char *fetch_app_name(pde_t* pagedir) {
+  struct proc *p;
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
+    if (p->pgdir == pagedir)
+      return p->name;
+  }
+  return NULL;
+}

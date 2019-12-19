@@ -315,9 +315,16 @@ extern int sys_uptime(void);
 pte_t*
 select_a_victim(pde_t *pgdir)
 { 
+  pde_t* pdrs[NPROC];
+  pde_t* pagedir;
+  int num_pdrs;
 	//cprintf("Attempting to select victim\n");
   pte_t* victim = NULL;
-  int i;
+  int i, j;
+
+  num_pdrs = proc_pagedirs(pdrs);
+
+  // one time for current process's pagedir
   for(i = KERNBASE - 1; i >= 0; i -= PGSIZE){
     pte_t *pte = walkpgdir(pgdir,(char *)i,0);
     // int abit = *pte & PTE_A;
@@ -326,10 +333,10 @@ select_a_victim(pde_t *pgdir)
     if((pte != 0) && (*pte & PTE_P)) {
       if((*pte & PTE_A) == 0) {
         if(!victim) {
-          cprintf("!ev 0x%p @t=%d\n", PTE_ADDR(i), sys_uptime());
+          cprintf("!ev 0x%p @t=%d @a=%s\n", PTE_ADDR(i), sys_uptime(), myproc()->name);
           victim = pte;
         } else
-          cprintf("!uu 0x%p @t=%d\n", PTE_ADDR(i), sys_uptime());
+          cprintf("!uu 0x%p @t=%d @a=%s\n", PTE_ADDR(i), sys_uptime(), myproc()->name);
         
         // return pte;
       } else {
@@ -341,8 +348,40 @@ select_a_victim(pde_t *pgdir)
     }
   }
   clearaccessbit(pgdir);
+
+  for (j = 0; j < num_pdrs; j++) {
+    pagedir = pdrs[j];
+    char *app_name = fetch_app_name(pagedir);
+    if (pagedir == pgdir) continue; // if checking current process's pgdir, pass
+    for(i = KERNBASE - 1; i >= 0; i -= PGSIZE){
+      pte_t *pte = walkpgdir(pagedir,(char *)i,0);
+      // int abit = *pte & PTE_A;
+      //int pbit = *pte & PTE_P;
+      // int dbit = *pte & PTE_O;
+      if((pte != 0) && (*pte & PTE_P)) {
+        if((*pte & PTE_A) == 0) {
+          if(!victim) {
+            cprintf("!ev2 0x%p @t=%d @a=%s\n", PTE_ADDR(i), sys_uptime(), app_name);
+            victim = pte;
+          } else
+            cprintf("!uu2 0x%p @t=%d @a=%s\n", PTE_ADDR(i), sys_uptime(), app_name);
+          
+          // return pte;
+        } else {
+          // cprintf("lu %p @ticks=%d\n", PTE_ADDR(i), sys_uptime());
+
+        }
+        // } else
+        // last_access_time = time();
+      }
+    }
+    clearaccessbit(pagedir);
+  }
+
+
   if (victim) return victim;
   return select_a_victim(pgdir);
+
 
   cprintf("Oops\n");
   return 0;
