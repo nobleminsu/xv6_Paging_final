@@ -536,11 +536,13 @@ int proc_pagedirs(pde_t** pdrs) {
   struct proc *p;
 
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
-    if (p->state == UNUSED)
+    if (p->state == UNUSED || p->state == ZOMBIE || p->state == EMBRYO)
       continue;
 
     if (p == initproc)
       continue;
+
+    // cprintf("wow %p, %s, %d\n", p->pgdir, p->name, p->state);
       
     pdrs[i] = p->pgdir;
     i++;

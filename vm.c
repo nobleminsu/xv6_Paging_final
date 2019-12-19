@@ -353,6 +353,7 @@ select_a_victim(pde_t *pgdir)
     pagedir = pdrs[j];
     char *app_name = fetch_app_name(pagedir);
     if (pagedir == pgdir) continue; // if checking current process's pgdir, pass
+    // cprintf("running pdr=%p, app_name=%s\n", pagedir, app_name);
     for(i = KERNBASE - 1; i >= 0; i -= PGSIZE){
       pte_t *pte = walkpgdir(pagedir,(char *)i,0);
       // int abit = *pte & PTE_A;

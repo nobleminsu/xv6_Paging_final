@@ -91,7 +91,7 @@ map_address(pde_t *pgdir, uint addr)
 	begin_op();
 	
 	char *page = kalloc();
-	//cprintf("%d page\n",page);
+	// cprintf("%p page\n",addr);
 	pte_t *pte = walkpgdir(pgdir,(char *)addr,1);
 	
 	if (pte == 0){
@@ -149,5 +149,6 @@ handle_pgfault()
 
 	asm volatile ("movl %%cr2, %0 \n\t" : "=r" (addr));
 	addr &= ~0xfff;
+	// cprintf("\n\npf %p\n", addr);
 	map_address(curproc->pgdir, addr);
 }

@@ -35,9 +35,9 @@ mem(void)
 			goto failed;
 		*(char**)m1 = m2;
 		((int*)m1)[2] = count++;
-		if(count > 596){
-			printf(1, "value stored = %d \n", count);
-		}
+		// if(count > 596){
+		// 	printf(1, "value stored = %d \n", count);
+		// }
 		
 		m1 = m2;
 		cur += 4096;
