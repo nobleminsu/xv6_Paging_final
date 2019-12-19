@@ -362,10 +362,10 @@ select_a_victim(pde_t *pgdir)
       if((pte != 0) && (*pte & PTE_P)) {
         if((*pte & PTE_A) == 0) {
           if(!victim) {
-            cprintf("!ev2 0x%p @t=%d @a=%s\n", PTE_ADDR(i), sys_uptime(), app_name);
+            cprintf("!ev 0x%p @t=%d @a=%s\n", PTE_ADDR(i), sys_uptime(), app_name);
             victim = pte;
           } else
-            cprintf("!uu2 0x%p @t=%d @a=%s\n", PTE_ADDR(i), sys_uptime(), app_name);
+            cprintf("!uu 0x%p @t=%d @a=%s\n", PTE_ADDR(i), sys_uptime(), app_name);
           
           // return pte;
         } else {
