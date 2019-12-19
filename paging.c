@@ -73,12 +73,13 @@ int
 swap_page(pde_t *pgdir)
 {
 	pte_t *pte = select_a_victim(pgdir);
-	//cprintf("Victim is %d\n",*pte);
+	// cprintf("Victim is %p\n",pte);
 	swap_page_from_pte(pte);
 	//panic("swap_page is not implemented");
 	return 1;
 }
 
+extern int sys_uptime(void);
 /* Map a physical page to the virtual address addr.
  * If the page table entry points to a swapped block
  * restore the content of the page from the swapped
@@ -100,6 +101,7 @@ map_address(pde_t *pgdir, uint addr)
 	uint blockid = getswappedblk(pgdir, *pte);
 
 	if(page == 0){
+		cprintf("\n\n!sw @t=%d\n", sys_uptime());
 		swap_page(pgdir);
 		page = kalloc();
 		//cprintf("page is %d",*page);
@@ -112,10 +114,12 @@ map_address(pde_t *pgdir, uint addr)
 			*pte = V2P(page) | (*pte & 0xfff);
 			*pte = *pte | PTE_P;
 			*pte = *pte & (~PTE_O);
+			cprintf("!ri 0x%p @t=%d @a=%s\n", PTE_ADDR(addr), sys_uptime(), myproc()->name);
 		}
 		else{
 			memset(page,0,PGSIZE);
 			*pte = V2P(page) | PTE_P | PTE_U | PTE_W;
+			cprintf("!zi 0x%p @t=%d @a=%s\n", PTE_ADDR(addr), sys_uptime(), myproc()->name);
 		}		
 	}
 	else{

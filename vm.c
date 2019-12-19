@@ -308,6 +308,7 @@ freevm(pde_t *pgdir)
   kfree((char*)pgdir);
 }
 
+extern int sys_uptime(void);
 // Select a page-table entry which is mapped
 // but not accessed. Notice that the user memory
 // is mapped between 0...KERNBASE.
@@ -315,6 +316,7 @@ pte_t*
 select_a_victim(pde_t *pgdir)
 { 
 	//cprintf("Attempting to select victim\n");
+  pte_t* victim = NULL;
   int i;
   for(i = KERNBASE - 1; i >= 0; i -= PGSIZE){
     pte_t *pte = walkpgdir(pgdir,(char *)i,0);
@@ -323,11 +325,23 @@ select_a_victim(pde_t *pgdir)
     // int dbit = *pte & PTE_O;
     if((pte != 0) && (*pte & PTE_P)) {
       if((*pte & PTE_A) == 0) {
-        return pte;
+        if(!victim) {
+          cprintf("!ev 0x%p @t=%d\n", PTE_ADDR(i), sys_uptime());
+          victim = pte;
+        } else
+          cprintf("!uu 0x%p @t=%d\n", PTE_ADDR(i), sys_uptime());
+        
+        // return pte;
+      } else {
+        // cprintf("lu %p @ticks=%d\n", PTE_ADDR(i), sys_uptime());
+
       }
+      // } else
+      // last_access_time = time();
     }
   }
   clearaccessbit(pgdir);
+  if (victim) return victim;
   return select_a_victim(pgdir);
 
   cprintf("Oops\n");
