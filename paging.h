@@ -20,6 +20,7 @@ struct swap_info {
     struct page_info *p_info;
 };
 
+void pageinit(void);
 void handle_pgfault();
 pte_t* select_a_victim(pde_t *pgdir);
 void clearaccessbit(pde_t *pgdir);

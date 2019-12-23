@@ -10,6 +10,14 @@
 #include "paging.h"
 #include "fs.h"
 
+extern struct spinlock p_lock;
+
+void
+pageinit(void)
+{
+	initlock(&p_lock, "paging");
+}
+
 static pte_t *
 walkpgdir(pde_t *pgdir, const void *va, int alloc)
 {

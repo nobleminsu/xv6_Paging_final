@@ -8,6 +8,7 @@
 #include "elf.h"
 #include "paging.h"
 #include "fs.h"
+#include "spinlock.h"
 
 extern char data[];  // defined by kernel.ld
 pde_t *kpgdir;  // for use in scheduler()
@@ -308,6 +309,8 @@ freevm(pde_t *pgdir)
   kfree((char*)pgdir);
 }
 
+struct spinlock p_lock;
+
 extern int sys_uptime(void);
 // Select a page-table entry which is mapped
 // but not accessed. Notice that the user memory
@@ -324,6 +327,7 @@ select_a_victim(pde_t *pgdir)
 
   num_pdrs = proc_pagedirs(pdrs);
 
+  acquire(&p_lock);
   // one time for current process's pagedir
   for(i = KERNBASE - 1; i >= 0; i -= PGSIZE){
     pte_t *pte = walkpgdir(pgdir,(char *)i,0);
@@ -378,6 +382,8 @@ select_a_victim(pde_t *pgdir)
     }
     clearaccessbit(pagedir);
   }
+
+  release(&p_lock);
 
 
   if (victim) return victim;
