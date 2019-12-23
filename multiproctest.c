@@ -5,9 +5,10 @@
 #include "stat.h"
 #include "user.h"
 
-#define N  2
+#define N 2
 
 char *argv[] = { "memtest1", 0 };
+char *argv2[] = { "memtest4", 0 };
 
 // void
 // printf(int fd, char *s, ...)
@@ -27,10 +28,18 @@ multiproctest(void)
     if(pid < 0)
       break;
     if(pid == 0){
-      // if(exec("memtest1", argv) < 0){
-      //   printf(1, "exec mem failed\n");
-      //   exit();
-      // }
+      if(n == 0 || n == 2) {
+        if(exec("memtest1", argv) < 0){
+          printf(1, "exec mem failed\n");
+          exit();
+        }
+      } else 
+      if(n == 1 || n == 3) {
+          if(exec("memtest4", argv2) < 0){
+          printf(1, "exec mem failed\n");
+          exit();
+        }
+      }
       exit();
     }
   }
@@ -52,7 +61,7 @@ multiproctest(void)
     exit();
   }
 
-  printf(1, "multiproctest OK\n");
+  printf(1, "multiproctest OK in %d\n", uptime());
 }
 
 int

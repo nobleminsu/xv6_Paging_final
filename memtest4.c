@@ -12,18 +12,15 @@ char buf[8192];
 char name[3];
 char *echoargv[] = { "echo", "ALL", "TESTS", "PASSED", 0 };
 int stdout = 1;
-#define TOTAL_MEMORY ((1 << 20) + (1 << 19) + (1 << 17))
-#define MIN_MEMORY ((1 << 20) + (1 << 18) )
+#define TOTAL_MEMORY ((1 << 20) + (1 << 19) + (1 << 18))
 
 void
 mem(void)
 {
-	void *m1 = 0, *m2, *start, *to_free;
+	void *m1 = 0, *m2, *start;
 	uint cur = 0;
-	uint on_mem = 0;
 	uint count = 0;
-	// uint total_count;
-	// int i;
+	uint total_count;
 
 	printf(1, "mem test\n");
 
@@ -31,8 +28,6 @@ mem(void)
 	if (m1 == 0)
 		goto failed;
 	start = m1;
-
-	to_free = start;
 
 	while (cur < TOTAL_MEMORY) {
 		m2 = malloc(4096);
@@ -45,31 +40,21 @@ mem(void)
 		// }
 		
 		m1 = m2;
-
-		cur += 4096;	
-		on_mem += 4096;
-
-		if (on_mem >= MIN_MEMORY) {
-			printf(1, "freeing %p \n", to_free);
-			void* next = *(char**)to_free;
-			free(to_free);
-			to_free = next;
-			on_mem -= 4096;
-		}	
+		cur += 4096;
+		
 	}
 	((int*)m1)[2] = count;
-	// total_count = count;
+	total_count = count;
 
-	// count = 0;
-	// m1 = start;
+	count = 0;
+	m1 = start;
 
-	// while (count != total_count) {
-	// 	if (count % 4 == 0 || count % 4 == 2) count++;
-	// 	if (((int*)m1)[2] != count)
-	// 		goto failed;
-	// 	m1 = *(char**)m1;
-	// 	count++;
-	// }
+	while (count != total_count) {
+		if (((int*)m1)[2] != count)
+			goto failed;
+		m1 = *(char**)m1;
+		count++;
+	}
 
 	printf(1, "mem ok %d\n", bstat());
 	exit();
