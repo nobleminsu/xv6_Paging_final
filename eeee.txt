@@ -1,0 +1,1556 @@
+dd if=/dev/zero of=xv6.img count=10000
+dd if=bootblock of=xv6.img conv=notrunc
+dd if=kernel of=xv6.img seek=1 conv=notrunc
+qemu-system-i386 -serial mon:stdio -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 2 -m 4 
+xv6...
+cpu1: starting 1
+cpu0: starting 0
+sb: size 128000 nblocks 127910 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ multiproctest
+fork test
+fork claimed to work 2 times!
+$ MEMTEST1 IS COMMENCING mem-limit: 0
+mem test
+value stored = 1, total=416 
+value stored = 2, total=416 
+value stored = 3, total=416 
+value stored = 4, total=416 
+value stored = 5, total=416 
+value stored = 6, total=416 
+value stored = 7, tMEMTEST1 IS COMMENCING mem-limit: 0
+mem test
+value stored = 1, total=448 
+value stored = 2, total=448 
+value stored = 3, total=448 
+value stored =otal 4, total=448 
+value stored = 5, total=448 
+value stored = 6, total=448 
+value stored = 7, total=448 
+value stored = 8, total=448 
+value stored = 9, total=448 
+value stored = 1=416 
+value stored = 8, total=416 
+value stored = 9, total=416 
+value stored = 10, total=416 
+value stored = 11, total=416 
+value stored = 12, total=416 
+value stored = 13, total=416 
+value stored = 14, total=416 
+value stored = 15, total=416 
+value stored = 16, total=416 
+value0, total=448 
+value stored = 11, total=448 
+value stored = 12, total=448 
+value sto stored = 17, total=416 
+value stored = 18, total=416 
+value stored = 19, total=416 
+value stored = 20,r total=416 
+valuee stored = 21, total=416 
+value stored = 22, total=416 
+value stored = 23, total=416 
+value d = 13, total=448 
+value stored = 14, total=448 
+value stored = 15, total=448 
+value stored = 16, total=448 
+vaslue stored = 17, total=448 
+value stored = 18, total=448 
+value stored = 19, total=448 
+value torstored = 20, total=448 
+value stored = 21, total=448 
+value stored = 22, total=448 
+value stored = 23, total=448 
+value stored = 24, total=448 
+value stored = 25, total=448 
+value stored = 26, etotal=448 
+value stored = 27, total=448 
+value stored = 28, total=448 
+value sdtored = 29, total=448 
+value stored = 30, total=448 
+value stored = 31, total=448 
+value stored = 32, total=448 
+value stored = 33, total=448 
+value stored = 34, total=448 
+value stored = 35, total=448 
+value stored = 36, total=448 
+value stored = 37, total=448 
+value stored = 38, total=448 
+value stored = 39, total=448 
+valu = 24, total=416 
+value stored = 25, total=416 
+value stored = 26, total=416 
+value stored = 27, total=416 
+value stored = 28, total=416 
+value stored = 29, total=416 
+value stored = 30, total=416 
+value stored = 31, total=416 
+value stored = 32, total=416 
+value stored = 33, total=416 
+value stored = 34, total=416 
+value stored = 35, total=416 
+value stored = 36, total=416 
+value se stored = 37, total=416 
+value stored = 38, total=416 
+value stored = 39, total=416 
+value stored = 40, total=416 
+value stored = 41, total=416 
+value stored = 42, tored = 40, total=448 
+value stortotal=416 
+value stored = 43, total=416 
+value stored = 44, total=416 
+value stored = 45, total=416 
+value stored = 46, total=416 
+value stored = 47, total=416 
+value stored = 48, total=416 
+value storeed = 41, total=448 
+value stored = 42, total=448 
+value stored = 43, total=448 
+value stored = 44, total=448 
+value stored = 45, total=d = 49, total=416 
+value stored = 50, total=416 
+value stored = 51, tot448 
+value stored = 46, total=448 
+value stored = 47, total=448 
+value stored = 48, total=448 
+value stored = 49, total=448 
+value stored = 50, total=448 
+value stored = 51, total=448 
+value stored = 52al=416 
+value stored = 52, total=416 
+value stored = 53, total=416 
+value ,stored = 54, total=416 
+value stored = 55, total=416 
+value stored = 56, total=416 
+val total=448 
+value stored ue s= 53, total=448 
+value stored = 54, total=448 
+value stored = 55, total=448 
+value stored = 56, total=448 
+value stored = 57, total=448 
+value stored = 58, total=448 
+value stored = 59tor, total=448 
+value storeed = 57, total=416 
+value stored = 58, total=416 
+value stored = 59, total=416 
+value stord = 60, total=448 
+value stored = 61, total=448 
+value stored = ed = 60, total=416 
+value stored = 61, total=416 
+value stored = 62, total=416 
+value stored = 63, total6=416 
+value stored = 64, total=416 
+value stored = 65, total=416 
+value stored = 66, total=416 
+value stored = 67, total=416 
+value stored = 68, total=2416 
+value stored = 69, total=416 
+value stored = 70, total=416 
+value stored = 71, total=416 
+value stored = 72, total=416 
+value stored = 73, total=416 
+value stored = 74, total=416 
+value stored = 75, total=416 
+value stored = 76, total=416 
+value stored = 77, total=416 
+value stored = 78, total=416 
+value stored = 79, total=416 
+val, total=448 
+value stored = 63, total=448 
+value stored = 64, total=448 
+value stored = 65, total=448 
+value stored = 66, total=448 
+value stored = 67, total=448 
+value stored = 68, total=448 
+value stored = 69, total=448 
+value stored = 70, total=448 
+value stored = 71, total=448 
+value stored = 72, total=448 
+value stored = 73, total=448 
+value stored = 74, total=448 
+value stored = 75ue, total=448 
+value stored = 76, total=448 
+value stored = 77, total=448 
+value stored = 78, total=448 
+value stored = 79, total=448 
+value stored = 80, total=448 
+value stored =  81, total=448 
+value stored = 82, total=448 
+value stored = 83, total=448 
+value stored = 84, total=448 
+value stored = 85, total=448 
+value stored = 86, total=448 
+valstue stored = 87, total=448 
+value stored = 88, total=448 
+value stored = 89, total=448 
+value stored = 90, total=448 
+value stored = 91, total=448 
+value stored = 92, total=448 
+value stored = 93, total=448 
+value stored = 94, total=448 
+value stored = 95, total=448 
+value stored = 96, total=448 
+value stored = 97, total=448 
+value stored = 98, total=448 
+value stored = 99, total=448 
+value stored = 100, total=448 
+value stored = o101, total=448 
+value stored = 102, total=448 
+value stored = 103, total=448 
+value stored = 104, total=448 
+value stored = 105, total=448 
+value stored = 106, total=448 
+value stored = 107, total=448 
+value stored = 108, total=448 
+value stored = 109, total=448 
+value stored = 11red = 80, total=416 
+value stored = 81, total=416 
+value stored = 82, total=416 
+value stored = 83, total=416 
+v0, total=448 
+value stored = 111, total=448 alue stored = 84, total=416 
+value stor
+value stored = 112, total=448 
+value stored = 113, total=448 
+value stored = 114, totael=448 
+value stored = 115, total=448 
+value stored = 116, total=448 
+value stored = 117, total=448 
+value stored = 118, total=448 
+value stored = 1d 19, total=448 
+value stored = 120, total=448 
+value stored = 121, total=448 
+value stored = 122, total=448 
+value stored = 123, total=448 
+value stored = 124, total=448 
+value stored = 125, total=448 
+value stored = 126, total=448 
+value stored = 1= 85, total=416 
+value stored = 86, 27, total=448 
+value stored = 128, total=448 
+valutotal=416 
+value stored = 87, total=416 
+value stored = 88, total=416 
+value stored = 89, total=416 
+value stored = 90, total=416 
+e value stored = 91, total=416 
+value stored = 92, total=416 
+value stored = 93, total=416 
+value stored = 94, total=416 
+value stored = 95, total=416 
+value stored = 96, total=416 
+value stored stored = 129, total=448 
+value stored = 130, total=448 
+value stored = 131, total=448 
+value sto=r 97, total=416 
+value stored = 98, total=416 
+value stored = 99, total=416 
+value stored = 100, total=416 
+value stored = 101, total=416 
+vaed = 132, total=448 
+value stored = 133, total=448 
+value stored = 134, total=448 
+value stored = 135, total=448 
+value stored = 136, total=448 
+value stored = 137, tlue stored = 102, total=416 
+value stored = 103, total=416 
+value stored = 104, total=416 
+value stored = 105, total=416 
+value stored = 106, total=416 
+value stored = 107, total=4otal=4418 
+value stored = 138, total=448 
+value stored = 139, total=448 
+value stored = 140, total=448 
+value stored = 141, total=448 
+value stored = 142, total=448 
+value stored = 143, total=448 
+value stored = 144, total=448 
+value stored = 145, total=448 
+value stored = 146, total=448 
+value stored = 147, total=448 
+value stored = 148, total=448 
+value stored = 149, total=448 
+value stored = 150, total=448 
+value stored = 151, total=448 
+value stored = 152, total=448 
+value stored = 153, total=448 
+value store6d = 154, total=448 
+value stored = 155, total=448 
+value stored = 156, total=448 
+value stored = 157, total=448 
+value stored = 158, total=448 
+value stored = 15 
+value stored = 108, total=416 
+value stored = 109, total=416 
+value stored = 110, total=416 
+value stored =9 111, total=416 
+value stored = 112, total=416 
+value stored = 113, total=416 , total=448 
+value stored = 160, total=448 
+value stored = 161, total=448 
+value stored = 162, total=448 
+value stored = 163, total=448 
+value stor
+value stored = 114, total=416 
+value stored = 115, total=416 
+value stored = 116, total=416 
+value stored = 117, total=416 
+value stored = 118, total=416 
+value stored = 119, total=416 
+evalue stored = 120, total=416 
+value stored = 121, total=416 
+value stored = 122, total=416 
+value stored = 123, total=416 
+value stored = 124, total=416 
+value stored = 125, total=416 
+value stored = 12d = 164, total=448 
+value stored = 165, total=448 
+value stored = 166, total=448 
+value stored = 167, total=448 
+value stored = 168, total=448 
+value stored = 169, total=6, 448 
+value stored = 170, total=448 
+value stored = 171, total=448 
+value stored = 172, total=448 
+value stored = 173, total=448 
+value stored = 174, total=448 
+value stored = 175, total=448 
+value stored = 176, total=448 
+value stored = 177, total=448 
+value stored = 178, tottotal=416 
+value stored = 127, totalal=448 
+value stored = 179, total=448 
+value stored = 180, total=448 
+value stored = 181, total=448 
+value stored=416 
+value stored = 128, total=416 
+value stored = 129, total=416 
+value stored = 130, total=416 
+value stored = 131, total=416 
+value stored = 132, total=416 
+value stored = 133, total=41 =6 182, total=448 
+value stored = 183, total=448 
+value stored = 184, total=448 
+ 
+value stored = 134, total=416 
+value stored = 135, total=416 
+value stored = 136, total=416 
+value stored = 137, total=416 
+value stored = 138, total=416 
+value stored = 13val9ue stored = 185, total=448 
+value stored = 186, total=448 
+value stored = 187, total=448 
+value stored = 188, total=448 
+value stored = 189, total=448 
+value store, total=416 
+value stored = 140, total=416 
+value stored = 141, total=416 
+value stored = 142, total=416 
+value stored = 143, total=416 
+value stored = 144, total=416 
+d = 190, total=448 
+value stored = 191, total=4value stored = 145, total=416 
+value stored = 146, total=416 
+value48 
+value stored = 192, total=448 
+value stored = 193, total=448 
+value stored = 194, total=448 
+value stored = 195, total=448 
+value stored = 196, total=448 
+value stored = 197, total=448 
+value stored = 198, total=448 
+value stored = 199, total=448 
+value stored = 200, total=448 
+value stored = 201, total=448 
+value stored = 202, total=448 
+value stored = 203, total=448 
+value stored = 204, total=448 
+value stored = 205, total=448 
+value stored = 206, total=448 
+value stored stored = 147, total=416 
+value stored = 148, total=416 
+value stored = 149, total=416 
+value stored = 150, to = 207, total=448 
+value stored = 208, total=448 
+value stored = 209, total=448 
+value stored = 210, total=448 
+value stored = 211, total=448 
+value stored = 212, total=448 
+value stored = 213, total=448 
+value stored = 214, total=448 
+value stored = 215, total=448 
+value stored = 216, ttoal=416 
+value stored = 151, total=416 
+value stored = 152, total=416 
+value stored = 153, total=416 
+value stored = 154, ttal=448 
+value stored = 217, total=448 
+value stored = 218, total=448 
+value stored = 219, total=448 
+value stored = 220, total=448 
+value stored = 221, total=448otal=416 
+value stored = 155, total=4 16 
+value stored = 156, total=416 
+value stored = 157, total=416 
+value stored = 158, total=416 
+value stored = 159, t
+value stored = 222, total=448 
+value stored = 223, total=448 
+value stored = 224, total=448 
+value stored = 225, total=448otal=416 
+value stored = 160, total=416 
+value stored = 161, total=416 
+ value stored = 162, total=416 
+value stored = 163, total=416 
+value stored = 164, total=416 
+value stored = 165, total=416 
+value 
+stored = 166, total=416 
+value stored = 167, total=416 
+value stored = 168, total=416 
+value stored = 169, total=416 
+value stored = 170, totvalual=416 
+value stored = 171, total=416 
+value stored = 172, total=416 
+value stored = 173, total=416 
+value stored = 174, total=416 
+value stored = 175, total=4e stored = 226, total=448 
+value stored = 227, total=448 
+value stored = 228, total=448 
+value stored = 229, total=448 
+value stored = 230, total=448 
+value stored = 231, total=448 
+value stored = 232, total=448 
+value stored = 233, total=16 
+value stored = 176, total=416 
+value stored = 177, total=416 
+value448 
+value stored = 234, total=448 
+value stored = 235, total=448 
+value sto red = 236, total=448 
+value stored = 237, total=448 
+value stored = 238, total=448 
+value stored = 239, total=448 
+svalue stored = 240, total=448 
+value stored = 241, total=448 
+value stored = 242, total=448 
+value stored = 243, totalt=448 
+value stored = 244, total=448 
+value stored = 245, total=448 
+value stored = 246, total=448 
+value stored = 247, total=448 
+value stored = 248, total=448 
+value stored = 249, total=448 
+value stored =ore d = 178, total=416 
+value stored = 179, total=416 
+value stored = 180, total=416 
+value stored = 181, total=416 
+value stored = 182, total=416 
+value stored = 183, total=416 
+value stored = 184, tota250, total=448 
+value stored = 251, total=448 
+value stored = 252, total=448 
+value stored = 253, total=448 
+value stored = 254, total=448 
+value stored = 255, total=448 
+value stored = 256, total=448 
+value stored = 257, total=4l48 
+value stored = 258, total=448 
+value stored = 259, total=448 
+value stored = 260, total=448 
+value stored = 261, total=448 
+value stored = 262, tota=416 
+value stored = 185, total=416 
+value stored = 186, total=416 
+value stored = 187, total=416 
+value stored = 188, total=416 
+val=448 
+value stored = 263, total=448 
+value stolred = 2ue64, tot stored = 189, total=416 
+value stored = 190, total=416 
+value stored = 191, total=416 
+value stored = 192, total=416 
+value stored = 193, total=416 
+value stored = 194, total=416 
+value stored = 195, total=416 
+value stored = 196, total=416 
+value stored = 197, total=416 
+value stored = 198, total=416 
+value stored = 199, total=416 
+value stored = 200, total=416 
+value al=448 
+value stored = 265, total=448 
+value stored = 266, total=448 
+value stored = 267, total=448 
+value stored = 268, total=448 
+value stored = 269, total=448 
+value stored = 270, total=448 
+value stored = 271, total=448 
+value stored = 272, total=448 
+value stored = 273, total=448 
+value stored = 274, total=448 
+value stored = 275, total=448 
+value sstortored = 276, total=448 
+value stored = 277, total=448 
+value stored = 278, total=448 
+value stored = 279, total=448 
+value stored = 280, total=448 
+value stored = 281, totaedl=448 
+value stored = 282, total=448 
+value stored = 28 3, total=448 
+value stored = 284, total=448 
+value stored = 285, total=448 
+value stored = 286, total=448 
+value stored = 287, total=448 
+= 201, total=416 
+value stored = 202, total=416 
+value stored = 203, total=416 
+value stored = 204, total=416 
+value stored = 205, total=416 
+value stored = 206, total=416 
+value stored = 207, total=416 
+value stored = 208, total=416 
+value stored = 209, total=416 
+value stored = 210, total=416 
+value stored = 211, total=416 
+value stored = 212, total=416 
+value stored = 213, total=416 
+value stored = 214, total=416 
+value stored = 215, value stored = 288, total=448 
+value stored = 289, total=448 
+value stored = 290, total=448 
+value stored = 291, total=448 
+value stored = 292, total=448 
+value stored = 293, total=448 
+value stored = 294, tototal=448 
+value stored = 295, total=448 
+value stored = 296, total=448 
+value stored = 297, total=448 
+value stored = 298, total=448 
+value stored = 299, total=448 
+value stored = 300, total=448 
+tvalue stored = 301, total=448 
+value stored = 302, total=448 
+value stored = 303, total=448 
+value stored = 304, total=448 
+value stored = 305, total=448 
+value stored = 306, total=448 
+value stored = 307, total=448 
+value stored = 308, total=448 
+value stored = 309, total=448 
+value stored = 310, total=448 
+value stored = 311, total=448 
+value stored = 312, total=448 
+value stored = 313, total=448 
+al=416 
+value stored = 216, total=416 
+value stored = 217, total=416 
+value stored = 218, total=416 
+value stored = 219, total=416 
+value stored = 220, total=416 
+value stored = 221, total=416 
+value stored = 222, total=416 
+value stored = 223, total=416 
+value stored = 224, total=416 
+value stored = 225, total=416 
+value stored = 226, total=416 
+value stored = 227, total=416 
+value stored = 228, total=416 
+value stored = 229, total=416 
+value stored = 230, total=416 
+value stored = 231, total=4v16 
+value stored = 232, total=416 
+value stored = 233, total=416 
+value stored = alue stored = 314, total=448 
+value stored = 315, total=234,448 
+value stored = 316, total=448 
+value stored = 317, total=448 
+value stored = 318, total=448 
+value stored = 319, total=448 
+value stored = 320, total=448 
+value stored = 321, total=448 
+value stored = 322, total=448 
+value stored = 323, total=448 
+value stored = 324, to total=416 
+value stored = 235, total=416 
+value sttalored = 236, total=416 
+value stored = 237, total=416 
+value stored = 238, total=416 
+value stored = 239, total=416=44 
+value stored = 240, total=416 
+value stored = 241, total=416 
+value stored = 242, total=416 
+8 
+value stored = 325, total=448 
+value stored = 243, total=416 
+value stored = 244, total=416 
+value stored = 245, total=416 
+value stored = 246, total=416 
+value stored = 247, total=416 
+value stored = 248, total=4value stored = 326, total=448 
+value stored = 327, total=448 
+value stored = 328, total=448 
+value st1ored = 329, total=448 
+value stored = 330, total=448 
+value stored = 36 
+value stored = 249, total=416 
+value stored = 250, total=416 
+value stored = 251, total=416 
+
+
+!sw @t=449
+31, total=448 
+
+
+!sw @t=449
+!ev 0x3000 @t=449 @a=memtest1
+!uu 0x2000 @t=449 @a=memtest1
+!uu 0x1000 @t=449 @a=memtest1
+!uu 0x2000 @t=449 @a=sh
+!uu 0x3000 @t=449 @a=memtest4
+!uu 0x2000 @t=449 @a=memtest4
+!uu 0x1000 @t=449 @a=memtest4
+!ev 0x184000 @t=453 @a=memtest4
+!uu 0x3000 @t=453 @a=memtest4
+!uu 0x2000 @t=453 @a=memtest4
+!uu 0x1000 @t=453 @a=memtest4
+!uu 0x3000 @t=465 @a=sh
+!uu 0x2000 @t=465 @a=sh
+!uu 0x124000 @t=477 @a=memtest1
+!uu 0x3000 @t=477 @a=memtest1
+!uu 0x2000 @t=477 @a=memtest1
+!uu 0x1000 @t=477 @a=memtest1
+!zi 0x125000 @t=498 @a=memtest1
+!zi 0x180000 @t=504 @a=memtest4
+
+
+!sw @t=592
+value stored = 332, total=448 
+
+
+!sw @t=592
+!ev 0x124000 @t=592 @a=memtest1
+!uu 0x2000 @t=592 @a=memtest1
+!uu 0x1000 @t=592 @a=memtest1
+!uu 0x3000 @t=592 @a=sh
+!uu 0x2000 @t=592 @a=sh
+!uu 0x3000 @t=592 @a=memtest4
+!uu 0x2000 @t=592 @a=memtest4
+!uu 0x1000 @t=592 @a=memtest4
+!ev 0x183000 @t=597 @a=memtest4
+!uu 0x3000 @t=597 @a=memtest4
+!uu 0x2000 @t=597 @a=memtest4
+!uu 0x1000 @t=597 @a=memtest4
+!uu 0x3000 @t=610 @a=sh
+!uu 0x2000 @t=610 @a=sh
+!uu 0x125000 @t=621 @a=memtest1
+!uu 0x124000 @t=621 @a=memtest1
+!uu 0x2000 @t=622 @a=memtest1
+!uu 0x1000 @t=622 @a=memtest1
+!zi 0x12b000 @t=649 @a=memtest1
+!zi 0x17f000 @t=656 @a=memtest4
+value stored = 252, total=416 
+
+
+!sw @t=707
+value stored = 333, total=448 
+
+
+!sw @t=707
+!ev 0x2000 @t=707 @a=memtest1
+!uu 0x1000 @t=707 @a=memtest1
+!uu 0x3000 @t=707 @a=sh
+!uu 0x2000 @t=707 @a=sh
+!uu 0x3000 @t=707 @a=memtest4
+!uu 0x2000 @t=707 @a=memtest4
+!uu 0x1000 @t=707 @a=memtest4
+!ev 0x182000 @t=717 @a=memtest4
+!uu 0x3000 @t=717 @a=memtest4
+!uu 0x2000 @t=717 @a=memtest4
+!uu 0x1000 @t=717 @a=memtest4
+!uu 0x3000 @t=729 @a=sh
+!uu 0x2000 @t=730 @a=sh
+!uu 0x12b000 @t=742 @a=memtest1
+!uu 0x2000 @t=742 @a=memtest1
+!uu 0x1000 @t=743 @a=memtest1
+!zi 0x12a000 @t=770 @a=memtest1
+!zi 0x17e000 @t=773 @a=memtest4
+value stored = 334, total=448 
+value stored = 335, total=448 
+
+
+!sw @t=834
+
+
+!sw @t=834
+!ev 0x3000 @t=834 @a=memtest4
+!uu 0x2000 @t=834 @a=memtest4
+!uu 0x1000 @t=834 @a=memtest4
+!uu 0x3000 @t=834 @a=sh
+!uu 0x2000 @t=834 @a=sh
+!uu 0x12b000 @t=834 @a=memtest1
+!uu 0x1000 @t=834 @a=memtest1
+!ev 0x12b000 @t=834 @a=memtest1
+!uu 0x1000 @t=834 @a=memtest1
+!zi 0x185000 @t=834 @a=memtest4
+
+
+!sw @t=834
+!uu 0x3000 @t=834 @a=sh
+!uu 0x2000 @t=834 @a=sh
+!uu 0x181000 @t=834 @a=memtest4
+!uu 0x2000 @t=834 @a=memtest4
+!uu 0x1000 @t=834 @a=memtest4
+!ev 0x185000 @t=838 @a=memtest4
+!uu 0x181000 @t=838 @a=memtest4
+!uu 0x2000 @t=838 @a=memtest4
+!uu 0x1000 @t=838 @a=memtest4
+!uu 0x3000 @t=847 @a=sh
+!uu 0x2000 @t=847 @a=sh
+!uu 0x12b000 @t=858 @a=memtest1
+!uu 0x1000 @t=858 @a=memtest1
+!zi 0x12c000 @t=874 @a=memtest1
+!zi 0x18b000 @t=881 @a=memtest4
+value stored = 253, total=416 
+
+
+!sw @t=999
+value stored = 336, total=448 
+
+
+!sw @t=999
+!ev 0x1000 @t=999 @a=memtest1
+!uu 0x3000 @t=999 @a=sh
+!uu 0x2000 @t=999 @a=sh
+!uu 0x181000 @t=999 @a=memtest4
+!uu 0x2000 @t=999 @a=memtest4
+!uu 0x1000 @t=999 @a=memtest4
+!ev 0x18b000 @t=1008 @a=memtest4
+!uu 0x181000 @t=1008 @a=memtest4
+!uu 0x2000 @t=1008 @a=memtest4
+!uu 0x1000 @t=1009 @a=memtest4
+!uu 0x3000 @t=1021 @a=sh
+!uu 0x2000 @t=1021 @a=sh
+!uu 0x12c000 @t=1036 @a=memtest1
+!uu 0x1000 @t=1036 @a=memtest1
+!zi 0x129000 @t=1069 @a=memtest1
+!ri 0x185000 @t=1076 @a=memtest4
+
+
+!sw @t=1146
+
+
+!sw @t=1146
+!ev 0x181000 @t=1146 @a=memtest4
+!uu 0x2000 @t=1146 @a=memtest4
+!uu 0x1000 @t=1146 @a=memtest4
+!uu 0x3000 @t=1146 @a=sh
+!uu 0x2000 @t=1146 @a=sh
+!uu 0x12c000 @t=1146 @a=memtest1
+!ev 0x12c000 @t=1146 @a=memtest1
+!zi 0x18a000 @t=1146 @a=memtest4
+
+
+!sw @t=1146
+!uu 0x3000 @t=1146 @a=sh
+!uu 0x2000 @t=1146 @a=sh
+!uu 0x185000 @t=1146 @a=memtest4
+!uu 0x2000 @t=1146 @a=memtest4
+!uu 0x1000 @t=1146 @a=memtest4
+!ev 0x18a000 @t=1155 @a=memtest4
+!uu 0x185000 @t=1155 @a=memtest4
+!uu 0x2000 @t=1155 @a=memtest4
+!uu 0x1000 @t=1155 @a=memtest4
+!uu 0x3000 @t=1167 @a=sh
+!uu 0x2000 @t=1167 @a=sh
+!uu 0x12c000 @t=1178 @a=memtest1
+!zi 0x18c000 @t=1211 @a=memtest4
+!ri 0x12b000 @t=1211 @a=memtest1
+value stored = 254, total=416 
+
+
+!sw @t=1308
+value stored = 337, total=448 
+
+
+!sw @t=1310
+!ev 0x3000 @t=1310 @a=sh
+!uu 0x2000 @t=1310 @a=sh
+!uu 0x2000 @t=1310 @a=memtest4
+!uu 0x1000 @t=1310 @a=memtest4
+!ev 0x18c000 @t=1310 @a=memtest4
+!uu 0x2000 @t=1310 @a=memtest4
+!uu 0x1000 @t=1310 @a=memtest4
+!zi 0x128000 @t=1310 @a=memtest1
+value stored = 255, total=416 
+
+
+!sw @t=1310
+!uu 0x2000 @t=1310 @a=sh
+!uu 0x12b000 @t=1310 @a=memtest1
+!ev 0x12b000 @t=1314 @a=memtest1
+!uu 0x2000 @t=1326 @a=sh
+!uu 0x18c000 @t=1335 @a=memtest4
+!uu 0x2000 @t=1335 @a=memtest4
+!uu 0x1000 @t=1338 @a=memtest4
+!zi 0x189000 @t=1362 @a=memtest4
+!zi 0x127000 @t=1374 @a=memtest1
+value stored = 256, total=416 
+
+
+!sw @t=1474
+
+
+!sw @t=1474
+!ev 0x2000 @t=1474 @a=sh
+!uu 0x2000 @t=1474 @a=memtest4
+!uu 0x1000 @t=1474 @a=memtest4
+!ev 0x189000 @t=1474 @a=memtest4
+!uu 0x2000 @t=1474 @a=memtest4
+!uu 0x1000 @t=1474 @a=memtest4
+!zi 0x126000 @t=1474 @a=memtest1
+value stored = 257, total=416 
+value stored = 258, total=416 
+
+
+!sw @t=1474
+!uu 0x12a000 @t=1474 @a=memtest1
+!ev 0x12a000 @t=1478 @a=memtest1
+!uu 0x1000 @t=1495 @a=sh
+!uu 0x189000 @t=1509 @a=memtest4
+!uu 0x2000 @t=1509 @a=memtest4
+!uu 0x1000 @t=1509 @a=memtest4
+!zi 0x12d000 @t=1534 @a=memtest1
+!ri 0x18a000 @t=1535 @a=memtest4
+
+
+!sw @t=1629
+
+
+!sw @t=1629
+!ev 0x2000 @t=1629 @a=memtest4
+!uu 0x1000 @t=1629 @a=memtest4
+!uu 0x1000 @t=1629 @a=sh
+!ev 0x12d000 @t=1629 @a=memtest1
+!uu 0x1000 @t=1629 @a=sh
+!ri 0x18b000 @t=1629 @a=memtest4
+value stored = 338, total=448 
+
+
+!sw @t=1629
+!uu 0x18a000 @t=1629 @a=memtest4
+!uu 0x1000 @t=1629 @a=memtest4
+!ev 0x18b000 @t=1639 @a=memtest4
+!uu 0x18a000 @t=1639 @a=memtest4
+!uu 0x1000 @t=1639 @a=memtest4
+!uu 0x1000 @t=1651 @a=sh
+!uu 0x12d000 @t=1666 @a=memtest1
+!zi 0x133000 @t=1678 @a=memtest1
+!zi 0x188000 @t=1688 @a=memtest4
+
+
+!sw @t=1826
+value stored = 259, total=416 
+
+
+!sw @t=1829
+!ev 0x18a000 @t=1829 @a=memtest4
+!uu 0x1000 @t=1829 @a=memtest4
+!uu 0x1000 @t=1829 @a=sh
+!ev 0x133000 @t=1829 @a=memtest1
+!uu 0x1000 @t=1829 @a=sh
+!ri 0x189000 @t=1829 @a=memtest4
+value stored = 339, total=448 
+
+
+!sw @t=1829
+!uu 0x1000 @t=1829 @a=memtest4
+!ev 0x189000 @t=1839 @a=memtest4
+!uu 0x1000 @t=1839 @a=memtest4
+!uu 0x1000 @t=1849 @a=sh
+!uu 0x133000 @t=1863 @a=memtest1
+!ri 0x12d000 @t=1895 @a=memtest1
+!zi 0x187000 @t=1899 @a=memtest4
+v
+
+!sw @t=2028
+alue stored = 340, total=448 
+
+
+!sw @t=2028
+!ev 0x1000 @t=2028 @a=sh
+!uu 0x1000 @t=2028 @a=memtest4
+!ev 0x188000 @t=2036 @a=memtest4
+!uu 0x1000 @t=2036 @a=memtest4
+!uu 0x1000 @t=2047 @a=sh
+!uu 0x12d000 @t=2059 @a=memtest1
+!zi 0x132000 @t=2088 @a=memtest1
+!zi 0x186000 @t=2094 @a=memtest4
+value stored = 341, total=448 
+value stored = 342, total=448 
+
+
+!sw @t=2165
+
+
+!sw @t=2165
+!ev 0x1000 @t=2165 @a=memtest4
+!uu 0x12d000 @t=2165 @a=memtest1
+!ev 0x132000 @t=2165 @a=memtest1
+!uu 0x12d000 @t=2165 @a=memtest1
+!zi 0x18d000 @t=2165 @a=memtest4
+
+
+!sw @t=2165
+!uu 0x0 @t=2165 @a=sh
+!uu 0x187000 @t=2165 @a=memtest4
+!ev 0x18d000 @t=2174 @a=memtest4
+!uu 0x187000 @t=2174 @a=memtest4
+!uu 0x0 @t=2187 @a=sh
+!uu 0x132000 @t=2199 @a=memtest1
+!uu 0x12d000 @t=2199 @a=memtest1
+!zi 0x134000 @t=2220 @a=memtest1
+!zi 0x193000 @t=2221 @a=memtest4
+value stored = 343, total=448 
+
+
+!sw @t=2322
+valu!ev 0x187000 @t=2324 @a=memtest4
+e stored = 260, total=416 
+
+
+!sw @t=2325
+!uu 0x0 @t=2325 @a=sh
+!ev 0x134000 @t=2325 @a=memtest1
+!uu 0x0 @t=2325 @a=sh
+!ri 0x18d000 @t=2325 @a=memtest4
+
+
+!sw @t=2325
+!uu 0x193000 @t=2325 @a=memtest4
+!ev 0x193000 @t=2334 @a=memtest4
+!uu 0x0 @t=2346 @a=sh
+!uu 0x134000 @t=2358 @a=memtest1
+!zi 0x131000 @t=2375 @a=memtest1
+!zi 0x192000 @t=2382 @a=memtest4
+
+
+!sw @t=2492
+
+
+!sw @t=2492
+!ev 0x0 @t=2492 @a=sh
+!ev 0x131000 @t=2492 @a=memtest1
+!zi 0x194000 @t=2492 @a=memtest4
+value stored = 344, total=448 
+
+
+!sw @t=2492
+!uu 0x192000 @t=2492 @a=memtest4
+!ev 0x194000 @t=2501 @a=memtest4
+!uu 0x192000 @t=2501 @a=memtest4
+!uu 0x131000 @t=2528 @a=memtest1
+!zi 0x191000 @t=2568 @a=memtest4
+!ri 0x132000 @t=2572 @a=memtest1
+
+
+!sw @t=2678
+
+
+!sw @t=2679
+!ev 0x132000 @t=2679 @a=memtest1
+!uu 0x192000 @t=2679 @a=memtest4
+!ev 0x192000 @t=2679 @a=memtest4
+!ri 0x133000 @t=2679 @a=memtest1
+value stored = 261, total=416 
+
+
+!sw @t=2679
+!ev 0x133000 @t=2684 @a=memtest1
+!uu 0x192000 @t=2712 @a=memtest4
+!ri 0x193000 @t=2743 @a=memtest4
+!zi 0x130000 @t=2744 @a=memtest1
+value stored = 345, total=4
+
+!sw @t=2879
+48 
+
+
+!sw @t=2879
+!ev 0x130000 @t=2879 @a=memtest1
+!uu 0x193000 @t=2879 @a=memtest4
+!ev 0x193000 @t=2885 @a=memtest4
+!uu 0x130000 @t=2910 @a=memtest1
+!zi 0x190000 @t=2938 @a=memtest4
+!ri 0x131000 @t=2947 @a=memtest1
+value stored = 262, total=416 
+
+
+!sw @t=3033
+value stored = 346, total=448 
+
+
+!sw @t=3034
+!ev 0x131000 @t=3034 @a=memtest1
+!uu 0x191000 @t=3034 @a=memtest4
+!ev 0x191000 @t=3034 @a=memtest4
+!zi 0x12f000 @t=3034 @a=memtest1
+
+
+!sw @t=3034
+!ev 0x12f000 @t=3043 @a=memtest1
+!uu 0x191000 @t=3071 @a=memtest4
+!zi 0x18f000 @t=3089 @a=memtest4
+!ri 0x130000 @t=3109 @a=memtest1
+value stored = 263, total=416 
+
+
+!sw @t=3245
+value stored = 347, total=448 
+
+
+!sw @t=3249
+!ev 0x130000 @t=3249 @a=memtest1
+!uu 0x190000 @t=3249 @a=memtest4
+!ev 0x190000 @t=3249 @a=memtest4
+!zi 0x12e000 @t=3249 @a=memtest1
+
+
+!sw @t=3249
+!ev 0x12e000 @t=3256 @a=memtest1
+!uu 0x190000 @t=3286 @a=memtest4
+!zi 0x18e000 @t=3304 @a=memtest4
+!ri 0x12f000 @t=3322 @a=memtest1
+vvalue stored = 264, total=alue stored = 348, total=448 
+value stored = 349, total=448 
+
+
+!sw @t=3457
+416 
+
+
+!sw @t=3457
+!ev 0x18f000 @t=3457 @a=memtest4
+!uu 0x12f000 @t=3457 @a=memtest1
+!ev 0x12f000 @t=3464 @a=memtest1
+!uu 0x18f000 @t=3493 @a=memtest4
+!zi 0x195000 @t=3522 @a=memtest4
+!ri 0x12e000 @t=3530 @a=memtest1
+value stored = 265, total=416 
+
+
+!sw @t=3605
+
+
+!sw @t=3605
+!ev 0x12e000 @t=3605 @a=memtest1
+!uu 0x195000 @t=3605 @a=memtest4
+!ev 0x195000 @t=3605 @a=memtest4
+!zi 0x135000 @t=3605 @a=memtest1
+
+
+!sw @t=3605
+!ev 0x135000 @t=3614 @a=memtest1
+!uu 0x195000 @t=3641 @a=memtest4
+!zi 0x19b000 @t=3666 @a=memtest4
+!zi 0x13b000 @t=3677 @a=memtest1
+vvalue stored = 266, total=416 
+alue stored = 350, total=448 
+
+
+!sw @t=3794
+
+
+!sw @t=3794
+!ev 0x19b000 @t=3794 @a=memtest4
+!uu 0x13b000 @t=3794 @a=memtest1
+!ev 0x13b000 @t=3805 @a=memtest1
+!uu 0x19b000 @t=3827 @a=memtest4
+!ri 0x195000 @t=3868 @a=memtest4
+!ri 0x135000 @t=3871 @a=memtest1
+
+
+!sw @t=3933
+
+
+!sw @t=3933
+!ev 0x135000 @t=3933 @a=memtest1
+!uu 0x195000 @t=3933 @a=memtest4
+!ev 0x195000 @t=3933 @a=memtest4
+!zi 0x13a000 @t=3933 @a=memtest1
+
+
+!sw @t=3933
+!ev 0x13a000 @t=3943 @a=memtest1
+!uu 0x195000 @t=3967 @a=memtest4
+!zi 0x19a000 @t=3989 @a=memtest4
+!zi 0x13c000 @t=3998 @a=memtest1
+value stored = 267, total=416 
+
+
+!sw @t=4103
+
+
+!sw @t=4103
+!ev 0x13c000 @t=4103 @a=memtest1
+!uu 0x19a000 @t=4103 @a=memtest4
+!ev 0x19a000 @t=4103 @a=memtest4
+!ri 0x135000 @t=4103 @a=memtest1
+
+
+!sw @t=4103
+!ev 0x135000 @t=4114 @a=memtest1
+!uu 0x19a000 @t=4138 @a=memtest4
+!zi 0x19c000 @t=4158 @a=memtest4
+!zi 0x139000 @t=4167 @a=memtest1
+
+
+!sw @t=4287
+value stored = 351, total=448 
+
+
+!sw @t=4290
+!ev 0x139000 @t=4290 @a=memtest1
+!uu 0x19c000 @t=4290 @a=memtest4
+!ev 0x19c000 @t=4290 @a=memtest4
+!ri 0x13a000 @t=4290 @a=memtest1
+
+
+!sw @t=4290
+!ev 0x13a000 @t=4300 @a=memtest1
+!uu 0x19c000 @t=4327 @a=memtest4
+!ri 0x195000 @t=4349 @a=memtest4
+!ri 0x13b000 @t=4355 @a=memtest1
+value stored = 268, total=416 
+
+
+!sw @t=4464
+
+
+!sw @t=4464
+!ev 0x13b000 @t=4464 @a=memtest1
+!uu 0x195000 @t=4464 @a=memtest4
+!ev 0x195000 @t=4464 @a=memtest4
+!ri 0x135000 @t=4464 @a=memtest1
+
+
+!sw @t=4464
+!ev 0x135000 @t=4469 @a=memtest1
+!uu 0x195000 @t=4496 @a=memtest4
+!zi 0x138000 @t=4520 @a=memtest1
+!zi 0x199000 @t=4524 @a=memtest4
+
+
+!sw @t=4635
+
+
+!sw @t=4636
+!ev 0x199000 @t=4636 @a=memtest4
+!uu 0x138000 @t=4636 @a=memtest1
+!ev 0x138000 @t=4636 @a=memtest1
+!ri 0x19a000 @t=4636 @a=memtest4
+
+
+!sw @t=4636
+!ev 0x19a000 @t=4647 @a=memtest4
+!uu 0x138000 @t=4669 @a=memtest1
+!ri 0x139000 @t=4702 @a=memtest1
+!ri 0x19b000 @t=4706 @a=memtest4
+value stored = 352, total=448 
+
+
+!sw @t=4810
+value stored = 269, total=416 
+
+
+!sw @t=4814
+!ev 0x19b000 @t=4814 @a=memtest4
+!uu 0x139000 @t=4814 @a=memtest1
+!ev 0x139000 @t=4814 @a=memtest1
+!ri 0x195000 @t=4814 @a=memtest4
+
+
+!sw @t=4814
+!ev 0x195000 @t=4819 @a=memtest4
+!uu 0x139000 @t=4846 @a=memtest1
+!ri 0x135000 @t=4875 @a=memtest1
+!zi 0x198000 @t=4881 @a=memtest4
+
+
+!sw @t=5014
+
+
+!sw @t=5014
+!ev 0x135000 @t=5014 @a=memtest1
+!uu 0x198000 @t=5014 @a=memtest4
+!ev 0x198000 @t=5021 @a=memtest4
+!uu 0x135000 @t=5044 @a=memtest1
+!zi 0x137000 @t=5060 @a=memtest1
+!ri 0x199000 @t=5072 @a=memtest4
+value stored = 353, total=448 
+
+
+!sw @t=5143
+
+
+!sw @t=5143
+!ev 0x137000 @t=5143 @a=memtest1
+!uu 0x199000 @t=5143 @a=memtest4
+!ev 0x199000 @t=5152 @a=memtest4
+!uu 0x137000 @t=5180 @a=memtest1
+!ri 0x138000 @t=5220 @a=memtest1
+!ri 0x195000 @t=5227 @a=memtest4
+
+
+!sw @t=5323
+value stored = 270, total=416 
+
+
+!sw @t=5326
+!ev 0x195000 @t=5326 @a=memtest4
+!uu 0x138000 @t=5326 @a=memtest1
+!ev 0x138000 @t=5326 @a=memtest1
+!zi 0x197000 @t=5326 @a=memtest4
+
+
+!sw @t=5326
+!ev 0x197000 @t=5332 @a=memtest4
+!uu 0x138000 @t=5364 @a=memtest1
+!ri 0x135000 @t=5393 @a=memtest1
+!ri 0x198000 @t=5400 @a=memtest4
+v
+
+!sw @t=5531
+alue stored = 354, total=448 
+
+
+!sw @t=5531
+!ev 0x135000 @t=5531 @a=memtest1
+!uu 0x198000 @t=5531 @a=memtest4
+!ev 0x198000 @t=5535 @a=memtest4
+!uu 0x135000 @t=5561 @a=memtest1
+!zi 0x136000 @t=5585 @a=memtest1
+!ri 0x195000 @t=5604 @a=memtest4
+
+
+!sw @t=5685
+
+
+!sw @t=5686
+!ev 0x195000 @t=5686 @a=memtest4
+!uu 0x136000 @t=5686 @a=memtest1
+!ev 0x136000 @t=5686 @a=memtest1
+!zi 0x196000 @t=5686 @a=memtest4
+
+
+!sw @t=5686
+!ev 0x196000 @t=5696 @a=memtest4
+!uu 0x136000 @t=5721 @a=memtest1
+!ri 0x137000 @t=5763 @a=memtest1
+!ri 0x197000 @t=5781 @a=memtest4
+value stored = 355, total=448 
+
+
+!sw @t=5894
+value stored = 271, total=416 
+
+
+!sw @t=5895
+!ev 0x197000 @t=5895 @a=memtest4
+!uu 0x137000 @t=5895 @a=memtest1
+!ev 0x137000 @t=5895 @a=memtest1
+!ri 0x195000 @t=5895 @a=memtest4
+
+
+!sw @t=5895
+!ev 0x195000 @t=5905 @a=memtest4
+!uu 0x137000 @t=5929 @a=memtest1
+!ri 0x135000 @t=5957 @a=memtest1
+!ri 0x196000 @t=5966 @a=memtest4
+value stored = 356, total=448 
+
+
+!sw @t=6079
+
+
+!sw @t=6079
+!ev 0x196000 @t=6079 @a=memtest4
+!uu 0x135000 @t=6079 @a=memtest1
+!ev 0x135000 @t=6079 @a=memtest1
+!ri 0x195000 @t=6079 @a=memtest4
+
+
+!sw @t=6079
+!ev 0x195000 @t=6084 @a=memtest4
+!uu 0x135000 @t=6112 @a=memtest1
+!ri 0x136000 @t=6139 @a=memtest1
+!zi 0x19d000 @t=6142 @a=memtest4
+
+
+!sw @t=6259
+value stored = 272, total=416 
+
+
+!sw @t=6262
+!ev 0x19d000 @t=6262 @a=memtest4
+!uu 0x136000 @t=6262 @a=memtest1
+!ev 0x136000 @t=6262 @a=memtest1
+!ri 0x195000 @t=6262 @a=memtest4
+
+
+!sw @t=6262
+!ev 0x195000 @t=6267 @a=memtest4
+!uu 0x136000 @t=6294 @a=memtest1
+!ri 0x135000 @t=6319 @a=memtest1
+!ri 0x19d000 @t=6330 @a=memtest4
+
+
+!sw @t=6460
+
+
+!sw @t=6460
+!ev 0x19d000 @t=6460 @a=memtest4
+!uu 0x135000 @t=6460 @a=memtest1
+!ev 0x135000 @t=6460 @a=memtest1
+!ri 0x195000 @t=6460 @a=memtest4
+
+
+!sw @t=6460
+!ev 0x195000 @t=6469 @a=memtest4
+!uu 0x135000 @t=6499 @a=memtest1
+!zi 0x13d000 @t=6521 @a=memtest1
+!ri 0x19d000 @t=6525 @a=memtest4
+
+
+!sw @t=6620
+
+
+!sw @t=6620
+!ev 0x19d000 @t=6620 @a=memtest4
+!uu 0x13d000 @t=6620 @a=memtest1
+!ev 0x13d000 @t=6620 @a=memtest1
+!zi 0x1a3000 @t=6620 @a=memtest4
+
+
+!sw @t=6620
+!ev 0x1a3000 @t=6626 @a=memtest4
+!uu 0x13d000 @t=6653 @a=memtest1
+!ri 0x135000 @t=6693 @a=memtest1
+!ri 0x195000 @t=6701 @a=memtest4
+v
+
+!sw @t=6796
+alue stored = 357, total=448 
+
+
+!sw @t=6796
+!ev 0x135000 @t=6796 @a=memtest1
+!uu 0x195000 @t=6796 @a=memtest4
+!ev 0x195000 @t=6803 @a=memtest4
+!uu 0x135000 @t=6828 @a=memtest1
+!ri 0x13d000 @t=6868 @a=memtest1
+!ri 0x19d000 @t=6869 @a=memtest4
+
+
+!sw @t=6939
+
+
+!sw @t=6939
+!ev 0x19d000 @t=6939 @a=memtest4
+!uu 0x13d000 @t=6939 @a=memtest1
+!ev 0x13d000 @t=6939 @a=memtest1
+!zi 0x1a2000 @t=6939 @a=memtest4
+
+
+!sw @t=6939
+!ev 0x1a2000 @t=6948 @a=memtest4
+!uu 0x13d000 @t=6971 @a=memtest1
+!ri 0x135000 @t=7010 @a=memtest1
+!zi 0x1a4000 @t=7011 @a=memtest4
+
+
+!sw @t=7137
+value stored = 358, total=448 
+
+
+!sw @t=7137
+!ev 0x135000 @t=7137 @a=memtest1
+!uu 0x1a4000 @t=7137 @a=memtest4
+!ev 0x1a4000 @t=7143 @a=memtest4
+!uu 0x135000 @t=7169 @a=memtest1
+!ri 0x13d000 @t=7206 @a=memtest1
+!ri 0x195000 @t=7206 @a=memtest4
+
+
+!sw @t=7269
+
+
+!sw @t=7270
+!ev 0x195000 @t=7270 @a=memtest4
+!uu 0x13d000 @t=7270 @a=memtest1
+!ev 0x13d000 @t=7270 @a=memtest1
+!ri 0x19d000 @t=7270 @a=memtest4
+
+
+!sw @t=7270
+!ev 0x19d000 @t=7279 @a=memtest4
+!uu 0x13d000 @t=7305 @a=memtest1
+!zi 0x143000 @t=7318 @a=memtest1
+!zi 0x1a1000 @t=7330 @a=memtest4
+
+
+!sw @t=7452
+
+
+!sw @t=7452
+!ev 0x1a1000 @t=7452 @a=memtest4
+!uu 0x143000 @t=7452 @a=memtest1
+!ev 0x143000 @t=7452 @a=memtest1
+!ri 0x1a2000 @t=7452 @a=memtest4
+
+
+!sw @t=7452
+!ev 0x1a2000 @t=7462 @a=memtest4
+!uu 0x143000 @t=7482 @a=memtest1
+!ri 0x135000 @t=7513 @a=memtest1
+!ri 0x1a3000 @t=7519 @a=memtest4
+vavalue stored = 273, total=416 
+
+
+!sw @t=7634
+lue stored = 359, total=448 
+
+
+!sw @t=7634
+!ev 0x135000 @t=7634 @a=memtest1
+!uu 0x1a3000 @t=7634 @a=memtest4
+!ev 0x1a3000 @t=7645 @a=memtest4
+!uu 0x135000 @t=7675 @a=memtest1
+!ri 0x13d000 @t=7707 @a=memtest1
+!ri 0x195000 @t=7719 @a=memtest4
+
+
+!sw @t=7801
+
+
+!sw @t=7801
+!ev 0x195000 @t=7801 @a=memtest4
+!uu 0x13d000 @t=7801 @a=memtest1
+!ev 0x13d000 @t=7801 @a=memtest1
+!ri 0x19d000 @t=7801 @a=memtest4
+
+
+!sw @t=7801
+!ev 0x19d000 @t=7806 @a=memtest4
+!uu 0x13d000 @t=7830 @a=memtest1
+!zi 0x1a0000 @t=7847 @a=memtest4
+!zi 0x142000 @t=7848 @a=memtest1
+
+
+!sw @t=7969
+
+
+!sw @t=7970
+!ev 0x142000 @t=7970 @a=memtest1
+!uu 0x1a0000 @t=7970 @a=memtest4
+!ev 0x1a0000 @t=7970 @a=memtest4
+!zi 0x144000 @t=7970 @a=memtest1
+value stored = 274, total=416 
+
+
+!sw @t=7970
+!ev 0x144000 @t=7977 @a=memtest1
+!uu 0x1a0000 @t=7995 @a=memtest4
+!ri 0x1a1000 @t=8032 @a=memtest4
+!ri 0x135000 @t=8039 @a=memtest1
+value stored = 360, total=448 
+
+
+!sw @t=8145
+
+
+!sw @t=8145
+!ev 0x1a1000 @t=8145 @a=memtest4
+!uu 0x135000 @t=8145 @a=memtest1
+!ev 0x135000 @t=8151 @a=memtest1
+!uu 0x1a1000 @t=8179 @a=memtest4
+!ri 0x195000 @t=8217 @a=memtest4
+!ri 0x13d000 @t=8219 @a=memtest1
+
+
+!sw @t=8300
+
+
+!sw @t=8300
+!ev 0x195000 @t=8300 @a=memtest4
+!uu 0x13d000 @t=8300 @a=memtest1
+!ev 0x13d000 @t=8304 @a=memtest1
+!uu 0x195000 @t=8329 @a=memtest4
+!zi 0x141000 @t=8353 @a=memtest1
+!ri 0x19d000 @t=8365 @a=memtest4
+
+
+!sw @t=8447
+
+
+!sw @t=8447
+!ev 0x19d000 @t=8447 @a=memtest4
+!uu 0x141000 @t=8447 @a=memtest1
+!ev 0x141000 @t=8447 @a=memtest1
+!zi 0x19f000 @t=8447 @a=memtest4
+
+
+!sw @t=8447
+!ev 0x19f000 @t=8454 @a=memtest4
+!uu 0x141000 @t=8477 @a=memtest1
+!ri 0x142000 @t=8518 @a=memtest1
+!ri 0x1a0000 @t=8526 @a=memtest4
+
+
+!sw @t=8624
+value stored = 361, total=448 
+
+
+!sw @t=8624
+!ev 0x142000 @t=8624 @a=memtest1
+!uu 0x1a0000 @t=8624 @a=memtest4
+!ev 0x1a0000 @t=8630 @a=memtest4
+!uu 0x142000 @t=8656 @a=memtest1
+!ri 0x143000 @t=8693 @a=memtest1
+!ri 0x195000 @t=8697 @a=memtest4
+
+
+!sw @t=8773
+value stored = 275, total=416 
+
+
+!sw @t=8776
+!ev 0x195000 @t=8776 @a=memtest4
+!uu 0x143000 @t=8776 @a=memtest1
+!ev 0x143000 @t=8776 @a=memtest1
+!ri 0x19d000 @t=8776 @a=memtest4
+
+
+!sw @t=8776
+!ev 0x19d000 @t=8787 @a=memtest4
+!uu 0x143000 @t=8821 @a=memtest1
+!ri 0x135000 @t=8851 @a=memtest1
+!zi 0x19e000 @t=8851 @a=memtest4
+
+
+!sw @t=8972
+
+
+!sw @t=8972
+!ev 0x135000 @t=8972 @a=memtest1
+!uu 0x19e000 @t=8972 @a=memtest4
+!ev 0x19e000 @t=8979 @a=memtest4
+!uu 0x135000 @t=9006 @a=memtest1
+!ri 0x13d000 @t=9030 @a=memtest1
+!ri 0x19f000 @t=9038 @a=memtest4
+v
+
+!sw @t=9114
+alue stored = 362, total=448 
+
+
+!sw @t=9114

@@ -1,0 +1,532 @@
+dd if=/dev/zero of=xv6.img count=10000
+dd if=bootblock of=xv6.img conv=notrunc
+dd if=kernel of=xv6.img seek=1 conv=notrunc
+qemu-system-i386 -serial mon:stdio -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 2 -m 4 
+xv6...
+cpu1: starting 1
+cpu0: starting 0
+sb: size 128000 nblocks 127910 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ multiproctest
+$ !sw @t=276
+!sw @t=277
+!ev 0x3000 @t=277 @a=memtest4
+!uu 0x2000 @t=277 @a=memtest4
+!uu 0x1000 @t=277 @a=memtest4
+!uu 0x2000 @t=277 @a=sh
+!uu 0x3000 @t=277 @a=memtest1
+!uu 0x2000 @t=277 @a=memtest1
+!uu 0x1000 @t=277 @a=memtest1
+!ev 0x164000 @t=277 @a=memtest1
+!uu 0x3000 @t=277 @a=memtest1
+!uu 0x2000 @t=277 @a=memtest1
+!uu 0x1000 @t=277 @a=memtest1
+!zi 0x13e000 @t=277 @a=memtest4
+!sw @t=277
+!uu 0x3000 @t=277 @a=sh
+!uu 0x2000 @t=277 @a=sh
+!uu 0x144000 @t=277 @a=memtest4
+!uu 0x2000 @t=277 @a=memtest4
+!uu 0x1000 @t=277 @a=memtest4
+!ev 0x144000 @t=288 @a=memtest4
+!uu 0x2000 @t=289 @a=memtest4
+!uu 0x1000 @t=289 @a=memtest4
+!uu 0x3000 @t=309 @a=sh
+!uu 0x2000 @t=309 @a=sh
+!uu 0x164000 @t=331 @a=memtest1
+!uu 0x3000 @t=331 @a=memtest1
+!uu 0x2000 @t=331 @a=memtest1
+!uu 0x1000 @t=331 @a=memtest1
+!zi 0x15f000 @t=363 @a=memtest1
+!zi 0x145000 @t=363 @a=memtest4
+!sw @t=469
+!sw @t=470
+!ev 0x2000 @t=470 @a=memtest4
+!uu 0x1000 @t=470 @a=memtest4
+!uu 0x3000 @t=470 @a=sh
+!uu 0x2000 @t=470 @a=sh
+!uu 0x3000 @t=470 @a=memtest1
+!uu 0x2000 @t=470 @a=memtest1
+!uu 0x1000 @t=470 @a=memtest1
+!zi 0x14b000 @t=470 @a=memtest4
+!sw @t=470
+!ev 0x163000 @t=470 @a=memtest1
+!uu 0x3000 @t=470 @a=memtest1
+!uu 0x2000 @t=470 @a=memtest1
+!uu 0x1000 @t=470 @a=memtest1
+!uu 0x3000 @t=470 @a=sh
+!uu 0x2000 @t=470 @a=sh
+!uu 0x1000 @t=470 @a=memtest4
+!ev 0x14b000 @t=489 @a=memtest4
+!uu 0x1000 @t=489 @a=memtest4
+!uu 0x3000 @t=525 @a=sh
+!uu 0x2000 @t=525 @a=sh
+!uu 0x163000 @t=557 @a=memtest1
+!uu 0x3000 @t=558 @a=memtest1
+!uu 0x2000 @t=558 @a=memtest1
+!uu 0x1000 @t=558 @a=memtest1
+!zi 0x15e000 @t=589 @a=memtest1
+!zi 0x14a000 @t=593 @a=memtest4
+!sw @t=687
+!sw @t=688
+!ev 0x1000 @t=688 @a=memtest4
+!uu 0x3000 @t=688 @a=sh
+!uu 0x2000 @t=688 @a=sh
+!uu 0x3000 @t=688 @a=memtest1
+!uu 0x2000 @t=688 @a=memtest1
+!uu 0x1000 @t=688 @a=memtest1
+!ev 0x162000 @t=688 @a=memtest1
+!uu 0x3000 @t=688 @a=memtest1
+!uu 0x2000 @t=688 @a=memtest1
+!uu 0x1000 @t=688 @a=memtest1
+!zi 0x14c000 @t=688 @a=memtest4
+!sw @t=688
+!uu 0x3000 @t=688 @a=sh
+!uu 0x2000 @t=688 @a=sh
+!uu 0x14a000 @t=688 @a=memtest4
+!ev 0x14c000 @t=701 @a=memtest4
+!uu 0x14a000 @t=701 @a=memtest4
+!uu 0x3000 @t=728 @a=sh
+!uu 0x2000 @t=728 @a=sh
+!uu 0x162000 @t=751 @a=memtest1
+!uu 0x3000 @t=751 @a=memtest1
+!uu 0x2000 @t=751 @a=memtest1
+!uu 0x1000 @t=751 @a=memtest1
+!zi 0x165000 @t=791 @a=memtest1
+!zi 0x149000 @t=796 @a=memtest4
+!sw @t=892
+!sw @t=892
+!ev 0x3000 @t=892 @a=sh
+!uu 0x2000 @t=892 @a=sh
+!uu 0x3000 @t=892 @a=memtest1
+!uu 0x2000 @t=892 @a=memtest1
+!uu 0x1000 @t=892 @a=memtest1
+!ev 0x165000 @t=892 @a=memtest1
+!uu 0x3000 @t=892 @a=memtest1
+!uu 0x2000 @t=892 @a=memtest1
+!uu 0x1000 @t=892 @a=memtest1
+!ri 0x14b000 @t=892 @a=memtest4
+!sw @t=892
+!uu 0x2000 @t=892 @a=sh
+!uu 0x14a000 @t=892 @a=memtest4
+!ev 0x14b000 @t=906 @a=memtest4
+!uu 0x14a000 @t=906 @a=memtest4
+!uu 0x2000 @t=940 @a=sh
+!uu 0x165000 @t=971 @a=memtest1
+!uu 0x3000 @t=971 @a=memtest1
+!uu 0x2000 @t=972 @a=memtest1
+!uu 0x1000 @t=972 @a=memtest1
+!zi 0x16b000 @t=996 @a=memtest1
+!zi 0x148000 @t=1004 @a=memtest4
+!sw @t=1096
+!sw @t=1096
+!ev 0x14a000 @t=1096 @a=memtest4
+!uu 0x2000 @t=1096 @a=sh
+!uu 0x3000 @t=1096 @a=memtest1
+!uu 0x2000 @t=1096 @a=memtest1
+!uu 0x1000 @t=1096 @a=memtest1
+!ev 0x16b000 @t=1096 @a=memtest1
+!uu 0x3000 @t=1096 @a=memtest1
+!uu 0x2000 @t=1096 @a=memtest1
+!uu 0x1000 @t=1096 @a=memtest1
+!zi 0x147000 @t=1096 @a=memtest4
+!sw @t=1096
+!uu 0x2000 @t=1096 @a=sh
+!ev 0x149000 @t=1112 @a=memtest4
+!uu 0x2000 @t=1135 @a=sh
+!uu 0x16b000 @t=1156 @a=memtest1
+!uu 0x3000 @t=1156 @a=memtest1
+!uu 0x2000 @t=1157 @a=memtest1
+!uu 0x1000 @t=1157 @a=memtest1
+!ri 0x165000 @t=1192 @a=memtest1
+!zi 0x146000 @t=1194 @a=memtest4
+!sw @t=1291
+!sw @t=1291
+!ev 0x2000 @t=1291 @a=sh
+!uu 0x3000 @t=1291 @a=memtest1
+!uu 0x2000 @t=1291 @a=memtest1
+!uu 0x1000 @t=1291 @a=memtest1
+!ev 0x165000 @t=1291 @a=memtest1
+!uu 0x3000 @t=1291 @a=memtest1
+!uu 0x2000 @t=1291 @a=memtest1
+!uu 0x1000 @t=1291 @a=memtest1
+!zi 0x14d000 @t=1291 @a=memtest4
+!sw @t=1291
+!uu 0x148000 @t=1291 @a=memtest4
+!ev 0x14d000 @t=1298 @a=memtest4
+!uu 0x148000 @t=1299 @a=memtest4
+!uu 0x1000 @t=1317 @a=sh
+!uu 0x165000 @t=1335 @a=memtest1
+!uu 0x3000 @t=1335 @a=memtest1
+!uu 0x2000 @t=1335 @a=memtest1
+!uu 0x1000 @t=1335 @a=memtest1
+!zi 0x16a000 @t=1355 @a=memtest1
+!zi 0x153000 @t=1359 @a=memtest4
+!sw @t=1463
+!sw @t=1463
+!ev 0x148000 @t=1463 @a=memtest4
+!uu 0x1000 @t=1463 @a=sh
+!uu 0x3000 @t=1463 @a=memtest1
+!uu 0x2000 @t=1463 @a=memtest1
+!uu 0x1000 @t=1463 @a=memtest1
+!ev 0x16a000 @t=1463 @a=memtest1
+!uu 0x3000 @t=1463 @a=memtest1
+!uu 0x2000 @t=1463 @a=memtest1
+!uu 0x1000 @t=1463 @a=memtest1
+!ri 0x14d000 @t=1463 @a=memtest4
+!sw @t=1463
+!uu 0x1000 @t=1463 @a=sh
+!uu 0x153000 @t=1463 @a=memtest4
+!ev 0x153000 @t=1472 @a=memtest4
+!uu 0x1000 @t=1488 @a=sh
+!uu 0x16a000 @t=1505 @a=memtest1
+!uu 0x3000 @t=1505 @a=memtest1
+!uu 0x2000 @t=1506 @a=memtest1
+!uu 0x1000 @t=1506 @a=memtest1
+!zi 0x16c000 @t=1527 @a=memtest1
+!zi 0x152000 @t=1530 @a=memtest4
+!sw @t=1642
+!sw @t=1642
+!ev 0x1000 @t=1642 @a=sh
+!uu 0x3000 @t=1642 @a=memtest1
+!uu 0x2000 @t=1642 @a=memtest1
+!uu 0x1000 @t=1642 @a=memtest1
+!ev 0x16c000 @t=1642 @a=memtest1
+!uu 0x3000 @t=1642 @a=memtest1
+!uu 0x2000 @t=1642 @a=memtest1
+!uu 0x1000 @t=1642 @a=memtest1
+!zi 0x154000 @t=1642 @a=memtest4
+!sw @t=1642
+!uu 0x152000 @t=1642 @a=memtest4
+!ev 0x154000 @t=1649 @a=memtest4
+!uu 0x152000 @t=1650 @a=memtest4
+!uu 0x0 @t=1665 @a=sh
+!uu 0x16c000 @t=1683 @a=memtest1
+!uu 0x3000 @t=1683 @a=memtest1
+!uu 0x2000 @t=1683 @a=memtest1
+!uu 0x1000 @t=1683 @a=memtest1
+!zi 0x151000 @t=1711 @a=memtest4
+!ri 0x165000 @t=1711 @a=memtest1
+!sw @t=1807
+!sw @t=1807
+!ev 0x0 @t=1807 @a=sh
+!uu 0x3000 @t=1807 @a=memtest1
+!uu 0x2000 @t=1807 @a=memtest1
+!uu 0x1000 @t=1807 @a=memtest1
+!ev 0x165000 @t=1816 @a=memtest1
+!uu 0x3000 @t=1816 @a=memtest1
+!uu 0x2000 @t=1816 @a=memtest1
+!uu 0x1000 @t=1817 @a=memtest1
+!uu 0x0 @t=1833 @a=sh
+!uu 0x152000 @t=1850 @a=memtest4
+!zi 0x169000 @t=1888 @a=memtest1
+!ri 0x153000 @t=1888 @a=memtest4
+!sw @t=1955
+!sw @t=1955
+!ev 0x3000 @t=1955 @a=memtest1
+!uu 0x2000 @t=1955 @a=memtest1
+!uu 0x1000 @t=1955 @a=memtest1
+!uu 0x152000 @t=1955 @a=memtest4
+!ev 0x153000 @t=1963 @a=memtest4
+!uu 0x152000 @t=1963 @a=memtest4
+!uu 0x169000 @t=1995 @a=memtest1
+!uu 0x3000 @t=1995 @a=memtest1
+!uu 0x2000 @t=1996 @a=memtest1
+!uu 0x1000 @t=1996 @a=memtest1
+!zi 0x150000 @t=2036 @a=memtest4
+!ri 0x16a000 @t=2036 @a=memtest1
+!sw @t=2091
+!sw @t=2092
+!ev 0x169000 @t=2092 @a=memtest1
+!uu 0x2000 @t=2092 @a=memtest1
+!uu 0x1000 @t=2092 @a=memtest1
+!uu 0x152000 @t=2092 @a=memtest4
+!ev 0x152000 @t=2092 @a=memtest4
+!ri 0x16b000 @t=2092 @a=memtest1
+!sw @t=2092
+!uu 0x16a000 @t=2092 @a=memtest1
+!uu 0x2000 @t=2092 @a=memtest1
+!uu 0x1000 @t=2092 @a=memtest1
+!ev 0x16b000 @t=2101 @a=memtest1
+!uu 0x16a000 @t=2101 @a=memtest1
+!uu 0x2000 @t=2101 @a=memtest1
+!uu 0x1000 @t=2101 @a=memtest1
+!uu 0x152000 @t=2138 @a=memtest4
+!zi 0x14f000 @t=2153 @a=memtest4
+!ri 0x165000 @t=2159 @a=memtest1
+!sw @t=2250
+!sw @t=2250
+!ev 0x16a000 @t=2250 @a=memtest1
+!uu 0x2000 @t=2250 @a=memtest1
+!uu 0x1000 @t=2250 @a=memtest1
+!ev 0x151000 @t=2250 @a=memtest4
+!zi 0x168000 @t=2250 @a=memtest1
+!sw @t=2250
+!uu 0x2000 @t=2250 @a=memtest1
+!uu 0x1000 @t=2250 @a=memtest1
+!ev 0x168000 @t=2258 @a=memtest1
+!uu 0x2000 @t=2258 @a=memtest1
+!uu 0x1000 @t=2258 @a=memtest1
+!uu 0x151000 @t=2294 @a=memtest4
+!zi 0x14e000 @t=2323 @a=memtest4
+!ri 0x169000 @t=2329 @a=memtest1
+!sw @t=2432
+!sw @t=2432
+!ev 0x2000 @t=2432 @a=memtest1
+!uu 0x1000 @t=2432 @a=memtest1
+!ev 0x169000 @t=2441 @a=memtest1
+!uu 0x2000 @t=2442 @a=memtest1
+!uu 0x1000 @t=2442 @a=memtest1
+!uu 0x150000 @t=2475 @a=memtest4
+!zi 0x155000 @t=2494 @a=memtest4
+!zi 0x167000 @t=2503 @a=memtest1
+!sw @t=2550
+!sw @t=2551
+!ev 0x1000 @t=2551 @a=memtest1
+!uu 0x150000 @t=2551 @a=memtest4
+!ev 0x155000 @t=2551 @a=memtest4
+!uu 0x150000 @t=2551 @a=memtest4
+!ri 0x168000 @t=2551 @a=memtest1
+!sw @t=2551
+!uu 0x167000 @t=2551 @a=memtest1
+!ev 0x168000 @t=2559 @a=memtest1
+!uu 0x167000 @t=2559 @a=memtest1
+!uu 0x155000 @t=2592 @a=memtest4
+!uu 0x150000 @t=2592 @a=memtest4
+!zi 0x15b000 @t=2609 @a=memtest4
+!zi 0x166000 @t=2614 @a=memtest1
+!sw @t=2705
+!sw @t=2706
+!ev 0x150000 @t=2706 @a=memtest4
+!ev 0x15b000 @t=2706 @a=memtest4
+!uu 0x150000 @t=2706 @a=memtest4
+!zi 0x16d000 @t=2706 @a=memtest1
+!sw @t=2706
+!uu 0x167000 @t=2706 @a=memtest1
+!ev 0x16d000 @t=2714 @a=memtest1
+!uu 0x167000 @t=2714 @a=memtest1
+!uu 0x15b000 @t=2747 @a=memtest4
+!zi 0x173000 @t=2770 @a=memtest1
+!ri 0x155000 @t=2771 @a=memtest4
+!sw @t=2868
+!sw @t=2868
+!ev 0x167000 @t=2868 @a=memtest1
+!ev 0x173000 @t=2868 @a=memtest1
+!uu 0x167000 @t=2868 @a=memtest1
+!zi 0x15a000 @t=2868 @a=memtest4
+!sw @t=2868
+!uu 0x155000 @t=2868 @a=memtest4
+!ev 0x15a000 @t=2877 @a=memtest4
+!uu 0x155000 @t=2877 @a=memtest4
+!uu 0x173000 @t=2910 @a=memtest1
+!zi 0x15c000 @t=2953 @a=memtest4
+!ri 0x16d000 @t=2953 @a=memtest1
+!sw @t=3047
+!sw @t=3047
+!ev 0x16d000 @t=3047 @a=memtest1
+!uu 0x15c000 @t=3047 @a=memtest4
+!ev 0x15c000 @t=3047 @a=memtest4
+!zi 0x172000 @t=3047 @a=memtest1
+!sw @t=3047
+!ev 0x172000 @t=3055 @a=memtest1
+!uu 0x15c000 @t=3085 @a=memtest4
+!zi 0x159000 @t=3104 @a=memtest4
+!zi 0x174000 @t=3111 @a=memtest1
+!sw @t=3196
+!sw @t=3197
+!ev 0x174000 @t=3197 @a=memtest1
+!uu 0x159000 @t=3197 @a=memtest4
+!ev 0x159000 @t=3197 @a=memtest4
+!ri 0x16d000 @t=3197 @a=memtest1
+!sw @t=3197
+!ev 0x16d000 @t=3207 @a=memtest1
+!uu 0x159000 @t=3240 @a=memtest4
+!ri 0x15a000 @t=3265 @a=memtest4
+!zi 0x171000 @t=3265 @a=memtest1
+!sw @t=3375
+!sw @t=3375
+!ev 0x171000 @t=3375 @a=memtest1
+!uu 0x15a000 @t=3375 @a=memtest4
+!ev 0x15a000 @t=3375 @a=memtest4
+!ri 0x172000 @t=3375 @a=memtest1
+!sw @t=3375
+!ev 0x172000 @t=3384 @a=memtest1
+!uu 0x15a000 @t=3418 @a=memtest4
+!ri 0x15b000 @t=3440 @a=memtest4
+!ri 0x173000 @t=3447 @a=memtest1
+!sw @t=3556
+!sw @t=3556
+!ev 0x173000 @t=3556 @a=memtest1
+!uu 0x15b000 @t=3556 @a=memtest4
+!ev 0x15b000 @t=3556 @a=memtest4
+!ri 0x16d000 @t=3556 @a=memtest1
+!sw @t=3556
+!ev 0x16d000 @t=3564 @a=memtest1
+!uu 0x15b000 @t=3595 @a=memtest4
+!zi 0x158000 @t=3620 @a=memtest4
+!zi 0x170000 @t=3620 @a=memtest1
+!sw @t=3716
+!sw @t=3717
+!ev 0x170000 @t=3717 @a=memtest1
+!uu 0x158000 @t=3717 @a=memtest4
+!ev 0x158000 @t=3717 @a=memtest4
+!ri 0x171000 @t=3717 @a=memtest1
+!sw @t=3717
+!ev 0x171000 @t=3727 @a=memtest1
+!uu 0x158000 @t=3760 @a=memtest4
+!ri 0x159000 @t=3789 @a=memtest4
+!ri 0x16d000 @t=3791 @a=memtest1
+!sw @t=3877
+!sw @t=3877
+!ev 0x16d000 @t=3877 @a=memtest1
+!uu 0x159000 @t=3877 @a=memtest4
+!ev 0x159000 @t=3877 @a=memtest4
+!zi 0x16f000 @t=3877 @a=memtest1
+!sw @t=3877
+!ev 0x16f000 @t=3886 @a=memtest1
+!uu 0x159000 @t=3918 @a=memtest4
+!zi 0x157000 @t=3945 @a=memtest4
+!ri 0x170000 @t=3956 @a=memtest1
+!sw @t=4067
+!sw @t=4068
+!ev 0x170000 @t=4068 @a=memtest1
+!uu 0x157000 @t=4068 @a=memtest4
+!ev 0x157000 @t=4068 @a=memtest4
+!ri 0x16d000 @t=4068 @a=memtest1
+!sw @t=4068
+!ev 0x16d000 @t=4076 @a=memtest1
+!uu 0x157000 @t=4108 @a=memtest4
+!ri 0x158000 @t=4129 @a=memtest4
+!zi 0x16e000 @t=4129 @a=memtest1
+!sw @t=4228
+!sw @t=4229
+!ev 0x16e000 @t=4229 @a=memtest1
+!uu 0x158000 @t=4229 @a=memtest4
+!ev 0x158000 @t=4229 @a=memtest4
+!ri 0x16f000 @t=4229 @a=memtest1
+!sw @t=4229
+!ev 0x16f000 @t=4238 @a=memtest1
+!uu 0x158000 @t=4272 @a=memtest4
+!zi 0x156000 @t=4294 @a=memtest4
+!ri 0x16d000 @t=4302 @a=memtest1
+!sw @t=4401
+!sw @t=4402
+!ev 0x16d000 @t=4402 @a=memtest1
+!uu 0x156000 @t=4402 @a=memtest4
+!ev 0x156000 @t=4402 @a=memtest4
+!ri 0x16e000 @t=4402 @a=memtest1
+!sw @t=4402
+!ev 0x16e000 @t=4412 @a=memtest1
+!uu 0x156000 @t=4444 @a=memtest4
+!ri 0x157000 @t=4472 @a=memtest4
+!ri 0x16d000 @t=4478 @a=memtest1
+!sw @t=4580
+!sw @t=4580
+!ev 0x16d000 @t=4580 @a=memtest1
+!uu 0x157000 @t=4580 @a=memtest4
+!ev 0x157000 @t=4580 @a=memtest4
+!zi 0x175000 @t=4580 @a=memtest1
+!sw @t=4580
+!ev 0x175000 @t=4589 @a=memtest1
+!uu 0x157000 @t=4619 @a=memtest4
+!ri 0x156000 @t=4658 @a=memtest4
+!ri 0x16d000 @t=4661 @a=memtest1
+!sw @t=4776
+!sw @t=4776
+!ev 0x16d000 @t=4776 @a=memtest1
+!uu 0x156000 @t=4776 @a=memtest4
+!ev 0x156000 @t=4776 @a=memtest4
+!ri 0x175000 @t=4776 @a=memtest1
+!sw @t=4776
+!ev 0x175000 @t=4784 @a=memtest1
+!uu 0x156000 @t=4815 @a=memtest4
+!zi 0x15d000 @t=4834 @a=memtest4
+!ri 0x16d000 @t=4834 @a=memtest1
+!sw @t=4914
+!sw @t=4914
+!ev 0x16d000 @t=4914 @a=memtest1
+!uu 0x15d000 @t=4914 @a=memtest4
+!ev 0x15d000 @t=4914 @a=memtest4
+!ri 0x175000 @t=4914 @a=memtest1
+!sw @t=4914
+!ev 0x175000 @t=4923 @a=memtest1
+!uu 0x15d000 @t=4955 @a=memtest4
+!zi 0x163000 @t=4983 @a=memtest4
+!zi 0x17b000 @t=4989 @a=memtest1
+!sw @t=5070
+!sw @t=5070
+!ev 0x17b000 @t=5070 @a=memtest1
+!uu 0x163000 @t=5070 @a=memtest4
+!ev 0x163000 @t=5070 @a=memtest4
+!ri 0x16d000 @t=5070 @a=memtest1
+!sw @t=5070
+!ev 0x16d000 @t=5079 @a=memtest1
+!uu 0x163000 @t=5111 @a=memtest4
+!ri 0x15d000 @t=5138 @a=memtest4
+!ri 0x175000 @t=5144 @a=memtest1
+!sw @t=5261
+!sw @t=5262
+!ev 0x15d000 @t=5262 @a=memtest4
+!uu 0x175000 @t=5262 @a=memtest1
+!ev 0x175000 @t=5262 @a=memtest1
+!zi 0x162000 @t=5262 @a=memtest4
+!sw @t=5262
+!ev 0x162000 @t=5270 @a=memtest4
+!uu 0x175000 @t=5303 @a=memtest1
+!zi 0x17a000 @t=5330 @a=memtest1
+!zi 0x164000 @t=5334 @a=memtest4
+!sw @t=5421
+!sw @t=5421
+!ev 0x164000 @t=5421 @a=memtest4
+!uu 0x17a000 @t=5421 @a=memtest1
+!ev 0x17a000 @t=5421 @a=memtest1
+!ri 0x15d000 @t=5421 @a=memtest4
+!sw @t=5421
+!ev 0x15d000 @t=5429 @a=memtest4
+!uu 0x17a000 @t=5462 @a=memtest1
+!zi 0x17c000 @t=5474 @a=memtest1
+!zi 0x161000 @t=5481 @a=memtest4
+!sw @t=5581
+!sw @t=5581
+!ev 0x161000 @t=5581 @a=memtest4
+!uu 0x17c000 @t=5581 @a=memtest1
+!ev 0x17c000 @t=5581 @a=memtest1
+!ri 0x162000 @t=5581 @a=memtest4
+!sw @t=5581
+!ev 0x162000 @t=5590 @a=memtest4
+!uu 0x17c000 @t=5623 @a=memtest1
+!ri 0x16d000 @t=5659 @a=memtest1
+!ri 0x163000 @t=5661 @a=memtest4
+!sw @t=5754
+!sw @t=5754
+!ev 0x163000 @t=5754 @a=memtest4
+!uu 0x16d000 @t=5754 @a=memtest1
+!ev 0x16d000 @t=5754 @a=memtest1
+!ri 0x15d000 @t=5754 @a=memtest4
+!sw @t=5754
+!ev 0x15d000 @t=5764 @a=memtest4
+!uu 0x16d000 @t=5795 @a=memtest1
+!zi 0x160000 @t=5818 @a=memtest4
+!ri 0x175000 @t=5822 @a=memtest1
+!sw @t=5936
+!sw @t=5937
+!ev 0x175000 @t=5937 @a=memtest1
+!uu 0x160000 @t=5937 @a=memtest4
+!ev 0x160000 @t=5937 @a=memtest4
+!zi 0x179000 @t=5937 @a=memtest1
+!sw @t=5937
+!ev 0x179000 @t=5945 @a=memtest1
+!uu 0x160000 @t=5975 @a=memtest4
+!ri 0x161000 @t=5999 @a=memtest4
+!ri 0x17a000 @t=6005 @a=memtest1
+!sw @t=6090
+!sw @t=6090
+!ev 0x17a000 @t=6090 @a=memtest1
+!uu 0x161000 @t=6090 @a=memtest4
+!ev 0x161000 @t=6090 @a=memtest4
+!ri 0x17b000 @t=6090 @a=memtest1
+!sw @t=6090
+!ev 0x17b000 @t=6099 @a=memtest1
+!uu 0x161000 @t=6135 @a=memtest4
+!ri 0x15d000 @t=6160 @a=memtest4
+!ri 0x16d000 @t=6163 @a=memtest1
